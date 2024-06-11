@@ -4,7 +4,7 @@ import './style.scss';
 import VehicleDetails from '../VehicleDetails';
 import VehicleMeta from '../VehicleMeta';
 
-export default memo(function ({ media, details, tabIndex }) {
+export default memo(function Vehicle({ media, details, tabIndex }) {
     const [showMeta, setShowMeta] = useState(false);
     const [isMetaVisible, setIsMetaVisible] = useState(false);
 

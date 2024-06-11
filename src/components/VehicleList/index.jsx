@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useData from '../../hooks/useData';
 import useFetchDetails from '../../hooks/useFetchDetails';
 import Vehicle from '../Vehicle';
@@ -7,7 +7,7 @@ import Loading from '../Loading';
 
 import './style.scss';
 
-const List = function ({ vehicles, isLoading }) {
+function List({ vehicles, isLoading }) {
     if (isLoading) {
         return <Loading testid="details" />;
     }
@@ -17,11 +17,16 @@ const List = function ({ vehicles, isLoading }) {
             {Array.isArray(vehicles) &&
                 vehicles.length &&
                 vehicles.map((data, i) => (
-                    <Vehicle key={data.id} {...data} tabIndex={i} />
+                    <Vehicle
+                        key={data.id}
+                        media={data.data}
+                        details={data.details}
+                        tabIndex={i}
+                    />
                 ))}
         </div>
     );
-};
+}
 
 export default function VehicleList() {
     const [loading, error, vehicles] = useData();

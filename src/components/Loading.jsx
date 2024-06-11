@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function ({ testid = '' }) {
+export default function Loading({ testid = '' }) {
     return <div data-testid={`loading${testid}`}>Loading</div>;
 }

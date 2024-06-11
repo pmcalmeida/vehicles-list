@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import './style.scss';
 
-export default memo(function ({
+export default memo(function VehicleDetails({
     name,
     price,
     description,
@@ -20,6 +20,7 @@ export default memo(function ({
                 data-testid="show_meta"
                 className="VehicleDetails__showMore"
                 onClick={handleToggleMeta}
+                onKeyDown={handleToggleMeta}
                 tabIndex={tabIndex + 1}
                 role="button"
                 aria-pressed={showMeta}

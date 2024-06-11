@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import './style.scss';
 
-export default memo(function ({ meta, showMeta, isMetaVisible }) {
+export default memo(function VehicleMeta({ meta, showMeta, isMetaVisible }) {
     return (
         <div
             data-testid="vehicle_meta"

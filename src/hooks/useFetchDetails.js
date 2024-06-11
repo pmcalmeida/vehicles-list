@@ -22,6 +22,7 @@ export default function useFetchDetails(vehicles) {
                     detailsCache.set(vehicle.id, vehicleDetails);
                 })
                 .catch((err) =>
+                    // eslint-disable-next-line no-console
                     console.error(`${err}: vehicle - ${vehicle.id}`)
                 );
 

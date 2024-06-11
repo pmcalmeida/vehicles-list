@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function ({ children }) {
+export default function Error({ children }) {
     return <div data-testid="error">{children}</div>;
 }
