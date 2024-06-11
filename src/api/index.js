@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { request } from './helpers';
 
 /**
@@ -6,7 +5,11 @@ import { request } from './helpers';
  *
  * @return {Promise<Array.<vehicleSummaryPayload>>}
  */
-// TODO: All API related logic should be made inside this function.
-export default async function getData() {
-  return [];
+export default function getData(url) {
+    return request(url).then((result) => {
+        if (result.status === 200) {
+            return result.json();
+        }
+        throw new Error(result.statusText);
+    });
 }

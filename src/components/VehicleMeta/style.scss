@@ -1,0 +1,29 @@
+.VehicleMeta {
+  animation: fadeIn .3s ease-in;
+  background-color: white;
+  border: 2px solid #eef1f1;
+  border-radius: 5px;
+  bottom: 10px;
+  box-shadow: 2px 2px 15px rgba($color: #4a4e54, $alpha: .2);
+  display: none;
+  height: 140px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  transition: opacity .2s ease-in-out;
+  z-index: 1;
+
+  @media (min-width: 794px) {
+    bottom: -130px;
+    right: 10px;
+  }
+
+
+  p {
+    color: #4a4e54;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin: 0;
+    padding: 5px;
+  }
+}
