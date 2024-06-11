@@ -14,16 +14,16 @@ function List({ vehicles, isLoading }) {
 
     return (
         <div className="VehicleList">
-            {Array.isArray(vehicles) &&
-                vehicles.length &&
-                vehicles.map((data, i) => (
-                    <Vehicle
-                        key={data.id}
-                        media={data.data}
-                        details={data.details}
-                        tabIndex={i}
-                    />
-                ))}
+            {Array.isArray(vehicles) && vehicles.length
+                ? vehicles.map((data, i) => (
+                      <Vehicle
+                          key={data.id}
+                          media={data.media}
+                          details={data.details}
+                          tabIndex={i}
+                      />
+                  ))
+                : ''}
         </div>
     );
 }

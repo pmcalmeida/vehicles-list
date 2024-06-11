@@ -10,6 +10,7 @@ export default function useFetchDetails(vehicles) {
     const fetchVehicleDetails = useCallback(
         async function fetchDetails(vehicle) {
             const vehicleDetails = { ...vehicle };
+
             // Return details from cache if present
             if (detailsCache.has('id')) {
                 const details = detailsCache.get('id');
@@ -27,8 +28,8 @@ export default function useFetchDetails(vehicles) {
                 );
 
             // Ignore vehicles with not details data or price
-            if (vehicle.details && vehicle.details.price) {
-                return Promise.resolve(vehicle);
+            if (vehicleDetails.details && vehicleDetails.details.price) {
+                return Promise.resolve(vehicleDetails);
             }
             return false;
         },

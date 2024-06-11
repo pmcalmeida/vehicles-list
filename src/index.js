@@ -7,5 +7,5 @@ ReactDOM.render(
     <React.StrictMode>
         <VehicleList />
     </React.StrictMode>,
-    document.getElementsByClassName('root')
+    document.querySelector('.root')
 );
