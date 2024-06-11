@@ -18,6 +18,7 @@ function List({ vehicles, isLoading }) {
                 ? vehicles.map((data, i) => (
                       <Vehicle
                           key={data.id}
+                          name={data.id /* pass id since there is no name */}
                           media={data.media}
                           details={data.details}
                           tabIndex={i}

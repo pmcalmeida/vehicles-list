@@ -4,7 +4,7 @@ import './style.scss';
 import VehicleDetails from '../VehicleDetails';
 import VehicleMeta from '../VehicleMeta';
 
-export default memo(function Vehicle({ media, details, tabIndex }) {
+export default memo(function Vehicle({ name, media, details, tabIndex }) {
     const [showMeta, setShowMeta] = useState(false);
     const [isMetaVisible, setIsMetaVisible] = useState(false);
 
@@ -22,7 +22,7 @@ export default memo(function Vehicle({ media, details, tabIndex }) {
         }
     }, [showMeta]);
 
-    return (
+    return ( 
         <div className="VehicleContainer">
             <section
                 className="Vehicle"
@@ -33,18 +33,18 @@ export default memo(function Vehicle({ media, details, tabIndex }) {
                 <img
                     className="Vehicle__img_desktop"
                     src={media[0].url}
-                    alt={description}
                     title={media[0].name}
+                    alt={description}
                 />
                 <img
                     className="Vehicle__img_mobile"
                     src={media[1].url}
-                    alt={description}
                     title={media[1].name}
+                    alt={description}
                 />
                 {details ? (
                     <VehicleDetails
-                        name={media[0].name}
+                        name={name}
                         price={price}
                         description={description}
                         showMeta={showMeta}
