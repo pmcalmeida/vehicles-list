@@ -23,6 +23,7 @@ export default memo(function VehicleDetails({
                 onKeyDown={handleToggleMeta}
                 tabIndex={tabIndex + 1}
                 role="button"
+                aria-expanded={showMeta}
                 aria-pressed={showMeta}
             >
                 {showMeta ? 'Hide info' : 'Read more...'}

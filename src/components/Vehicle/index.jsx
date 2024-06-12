@@ -10,8 +10,15 @@ export default memo(function Vehicle({ name, media, details, tabIndex }) {
 
     const { description, price, meta } = details || {};
 
-    const handleToggleMeta = () =>
-        setShowMeta((visible) => setShowMeta(!visible));
+    const handleToggleMeta = (e) => {
+        // On click, pressing enter or space
+        if (
+            e.type !== 'keydown' ||
+            (e.type === 'keydown' && (e.keyCode === 32 || e.keyCode === 13))
+        ) {
+            setShowMeta((visible) => setShowMeta(!visible));
+        }
+    };
 
     useEffect(() => {
         if (!showMeta) {
@@ -22,7 +29,7 @@ export default memo(function Vehicle({ name, media, details, tabIndex }) {
         }
     }, [showMeta]);
 
-    return ( 
+    return (
         <div className="VehicleContainer">
             <section
                 className="Vehicle"
