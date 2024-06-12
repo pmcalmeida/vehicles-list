@@ -1,7 +1,12 @@
 import React, { memo } from 'react';
 import './style.scss';
 
-export default memo(function VehicleMeta({ meta, showMeta, isMetaVisible }) {
+export default memo(function VehicleMeta({
+    meta,
+    description,
+    showMeta,
+    isMetaVisible,
+}) {
     return (
         <div
             data-testid="vehicle_meta"
@@ -11,6 +16,7 @@ export default memo(function VehicleMeta({ meta, showMeta, isMetaVisible }) {
                 display: isMetaVisible ? 'block' : 'none',
             }}
         >
+            <p className="VehicleMeta__description">{description}</p>
             <p>
                 {meta.bodystyles && meta.bodystyles.length
                     ? `Body styles: ${meta.bodystyles.join(', ')}`

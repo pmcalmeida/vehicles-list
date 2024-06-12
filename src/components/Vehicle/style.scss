@@ -2,7 +2,7 @@
   min-width: 640px;
   position: relative;
 
-  @media (min-width: 794px) {
+  @media (min-width: 801px) {
     min-width: 0;
   }
 }
@@ -32,7 +32,7 @@
     box-shadow: 2px 2px 10px rgba($color: #4a4e54, $alpha: .2);
   }
 
-  @media (min-width: 794px) {
+  @media (min-width: 801px) {
     flex-direction: column;
     min-width: 0;
   }
@@ -41,16 +41,17 @@
     display: none;
     width: 100%;
 
-    @media (min-width: 794px) {
+    @media only screen and (min-width: 801px) {
       display: block;
     }
   }
 
   &__img_mobile {
     display: block;
-    width: 25%;
+    height: 200px;
+    width: 200px;
 
-    @media (min-width: 794px) {
+    @media only screen and (min-width: 801px) {
       display: none;
     }
   }

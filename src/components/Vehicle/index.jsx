@@ -64,6 +64,7 @@ export default memo(function Vehicle({ name, media, details, tabIndex }) {
             </section>
             {isMetaVisible ? (
                 <VehicleMeta
+                    description={description}
                     meta={meta}
                     showMeta={showMeta}
                     isMetaVisible={isMetaVisible}
