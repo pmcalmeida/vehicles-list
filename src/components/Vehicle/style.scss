@@ -37,22 +37,13 @@
     min-width: 0;
   }
   
-  &__img_desktop {
-    display: none;
-    width: 100%;
-
-    @media only screen and (min-width: 801px) {
-      display: block;
-    }
-  }
-
-  &__img_mobile {
-    display: block;
-    height: 200px;
+  &__img {
     width: 200px;
+    height: 200px;
 
     @media only screen and (min-width: 801px) {
-      display: none;
+      width: 100%;
+      height: auto;
     }
   }
 }

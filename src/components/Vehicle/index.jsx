@@ -37,18 +37,15 @@ export default memo(function Vehicle({ name, media, details, tabIndex }) {
                 data-testid="vehicle"
                 style={{ animationDelay: `${0.1 + tabIndex * 0.1}s` }}
             >
-                <img
-                    className="Vehicle__img_desktop"
-                    src={media[0].url}
-                    title={media[0].name}
-                    alt={description}
-                />
-                <img
-                    className="Vehicle__img_mobile"
-                    src={media[1].url}
-                    title={media[1].name}
-                    alt={description}
-                />
+                <picture>
+                    <source src={media[0].url} media="(min-width: 801px)" />
+                    <img
+                        className="Vehicle__img"
+                        src={media[1].url}
+                        title={media[1].name}
+                        alt={description}
+                    />
+                </picture>
                 {details ? (
                     <VehicleDetails
                         name={name}
